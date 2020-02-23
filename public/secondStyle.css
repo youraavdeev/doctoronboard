@@ -1,0 +1,235 @@
+@import url(fonts/style.css);
+.thmoon-wrapper {
+    max-width: 1425px;
+    margin: 3% 10%;
+    display: flex;
+    border-radius: 30px;
+    font-family: 'DIN Round';
+    font-size: 15px;
+    flex-grow: 1;
+}
+
+.thmoon-left {
+    border-radius: 30px 0 0 30px;
+    padding: 2% 8% 2% 3%;
+    width: 40%;
+    background-color: rgba(219, 250, 255, 0.8);
+}
+
+.thmoon-right {
+    border-radius: 0 30px 30px 0;
+    width: 33%;
+    padding: 2% 3% 2% 22%;
+    background-color: white;
+}
+
+.thmoon-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'DIN Round Pro';
+}
+
+.thmoon-first-text {
+    margin-bottom: 40px;
+}
+
+.thmoon-second-text {
+    margin-bottom: 40px;
+}
+
+.thmoon-third-text {
+    margin-bottom: 62px;
+}
+
+.thmoon-button-showmore {
+    color: #ffffff;
+    background-color: #00AFC9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 55px;
+    border-radius: 8px;
+}
+
+.thmoon-register-title {
+    color: #00AFC9;
+    font-size: 36px;
+    font-family: 'DIN Round Pro';
+}
+
+.thmoon-indicator-wrapper {
+    display: flex;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-family: 'DIN Round Pro';
+}
+
+#thmoon-indicator {
+    color: #A1A1A1;
+    margin-right: 13px;
+}
+
+.thmoon-tab {
+    display: none;
+}
+
+.thmoon-valid,
+.thmoon-input {
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid #00AFC9;
+    margin-bottom: 32px;
+}
+
+.thmoon-input:focus {
+    outline: none;
+}
+
+.thmoon-input::-webkit-input-placeholder {
+    font-size: 15px;
+    font-style: italic;
+}
+
+.thmoon-input:last-child {
+    margin-bottom: 0px;
+}
+
+.thmoon-nextBtn {
+    color: #ffffff;
+    background-color: #00AFC9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 55px;
+    border-radius: 8px;
+    margin-top: 36px;
+    cursor: pointer;
+}
+
+.thmoon-begin-button {
+    color: #ffffff;
+    background-color: #00AFC9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    border-radius: 8px;
+    margin-top: 36px;
+    cursor: pointer;
+}
+
+#thmoon-prevBtn {
+    margin-top: 30px;
+    color: #00AFC9;
+    /* text-decoration: underline; */
+    cursor: pointer;
+}
+
+.thmoon-underline {
+    border-bottom: 1px solid #00AFC9;
+}
+
+.thmoon-invalid {
+    border-bottom: 2px solid rgba(255, 0, 0, 0.5);
+}
+
+.thmoon-pezd {
+    color: red;
+}
+
+.thmoon-input-rec {
+    width: calc(300px - 18px);
+}
+
+.thmoon-search-img {
+    margin-top: 7px;
+    margin-right: 7px;
+    margin-bottom: 3px;
+}
+
+.thmoon-spec-container {
+    border-bottom: 2px solid #00AFC9;
+    display: flex;
+    overflow: hidden;
+    width: 300px;
+}
+
+.thmoon-spec-container-2 {
+    border-bottom: 2px solid #00AFC9;
+    display: flex;
+    width: 300px;
+}
+
+.thmoon-spec-wrapper {
+    padding: 18px;
+    margin-left: -18px;
+    margin-right: -18px;
+    border-radius: 18px;
+    background-color: #e5f7f9;
+    margin-bottom: 32px;
+    width: 336px;
+}
+
+#second-text {
+    width: 90%;
+}
+
+@media screen and (max-width: 1000px) {
+    .thmoon-control-buttons {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    .third-thmoon-control-buttons {
+        flex-direction: column;
+    }
+    .thmoon-begin-button {
+        width: 100%;
+    }
+    .thmoon-input-rec {
+        width: calc(100% -18px);
+    }
+    .thmoon-input {
+        width: 100%;
+        margin-bottom: 18px;
+    }
+    #register {
+        padding: 7% 9%;
+    }
+    .thmoon-spec-wrapper {
+        margin-right: -18px;
+        width: calc(100% + 32px);
+        margin-bottom: 18px;
+    }
+    .thmoon-spec-container {
+        width: 100%;
+    }
+    .thmoon-spec-container-2 {
+        width: 100%;
+    }
+    .first___section {
+        /* background-image: url(/img/fone.png); */
+        background-image: none;
+    }
+    .thmoon-background {
+        background-image: url(/img/fone.png);
+        opacity: 0.5;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    .thmoon-indicator-wrapper {
+        font-size: 14px;
+    }
+}
+
+#doctor {
+    transform: translateX(50%) !important;
+    right: 50% !important;
+}

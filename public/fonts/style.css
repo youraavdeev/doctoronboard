@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'DIN Round Pro';
+    src: local('DIN Round Pro Bold'), local('DIN-Round-Pro-Bold'),
+        url('DINRoundPro-Bold.woff2') format('woff2'),
+        url('DINRoundPro-Bold.woff') format('woff'),
+        url('DINRoundPro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DIN Round';
+    src: local('DIN Round Pro'), local('DIN-Round-Pro'),
+        url('15793.otf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+font-family: 'font6e38eec35bc1d4e29829f62e77dace99';
+    
+    src:    url('https://nomail.com.ua/files/eot/6e38eec35bc1d4e29829f62e77dace99.eot?#iefix') format('embedded-opentype'),
+            url('https://nomail.com.ua/files/woff/6e38eec35bc1d4e29829f62e77dace99.woff') format('woff'),
+            url('https://nomail.com.ua/files/woff2/6e38eec35bc1d4e29829f62e77dace99.woff2') format('woff2');
+}
+
+@font-face { font-family: 'PFDinTextPro-Light';  src: local('PFDinTextPro-Light'), url('https://nomail.com.ua/files/woff/6e38eec35bc1d4e29829f62e77dace99.woff') format('woff'); }
+
+
+#pfdintextprolight { font-family:'PFDinTextPro-Light'; }
+.font6e38eec35bc1d4e29829f62e77dace99 { font-family: 'font6e38eec35bc1d4e29829f62e77dace99'; }
+
+
+@font-face {
+font-family: 'font6ca47b5fab9104f045f8058dcbbb8bd6';
+    
+    src:    url('https://nomail.com.ua/files/eot/6ca47b5fab9104f045f8058dcbbb8bd6.eot?#iefix') format('embedded-opentype'),
+            url('https://nomail.com.ua/files/woff/6ca47b5fab9104f045f8058dcbbb8bd6.woff') format('woff'),
+            url('https://nomail.com.ua/files/woff2/6ca47b5fab9104f045f8058dcbbb8bd6.woff2') format('woff2');
+}
+
+@font-face { font-family: 'ChevinPro-Light';  src: local('ChevinPro-Light'), url('https://nomail.com.ua/files/woff/6ca47b5fab9104f045f8058dcbbb8bd6.woff') format('woff'); }
+
+#chevinprolight { font-family:'ChevinPro-Light'; }
+.font6ca47b5fab9104f045f8058dcbbb8bd6 { font-family: 'font6ca47b5fab9104f045f8058dcbbb8bd6'; }
