@@ -4,27 +4,28 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylev1.css">
     <link rel="stylesheet" href="secondStyle.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
     <!--<script type="text/javascript" src="https://github.com/jquery-validation/jquery-validation/blob/master/src/localization/messages_ru.js"></script>-->
+    <script type="text/javascript" src="cities/cities.js"></script>
     <title>Doctor on board</title>
 </head>
 
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <header>
-        <div class="container">
+    <header id='menu-container'>
+        <div class="container" id='menu-container-2'>
             <div class="menu">
                 <div class="header___logo">
                     <a href=""><img id="logo" src="img/header-logo.png"></a>
                 </div>
                 <nav id="menu-main">
                     <div class="topnav" id="myTopnav">
-                        <a href="#" style="margin-left: 0px;">О сайте</a>
-                        <a href="#">Сервис</a>
-                        <a href="#">Контакты</a>
+                        <!-- <a href="#" style="margin-left: 0px;">О сайте</a> -->
+                        <a href="#second_anchor" style="margin-left: 0px;">Сервис</a>
+                        <a href="#footer_anchor">Контакты</a>
                         <a href="#" id="enter">Вход</a>
                         <a href="#" id="menu" class="icon">
                             <img src="img/menu.png" height="25" class="d-inline-block align-center" alt="logo">
@@ -74,9 +75,9 @@
         </div>
         <div class="mobile_snipet">
             <div id="mobile_menu">
-                <a href="#" style="margin-left: 0px;">О сайте</a>
-                <a href="#">Сервис</a>
-                <a href="#">Контакты</a>
+                <!-- <a href="#" style="margin-left: 0px;">О сайте</a> -->
+                <a href="#second_anchor" style="margin-left: 0px;">Сервис</a>
+                <a href="#footer_anchor">Контакты</a>
             </div>
             <div id="mobile_enter_form">
                 <div style="width:90%; margin:5% 5% 2%; text-align:center;">
@@ -104,7 +105,7 @@
                     <br>
                     <div>
                         <span>
-							<a href="#">Подробнее</a>
+							<a href="#second_anchor">Подробнее</a>
 							<img src="img/airplane.png" height="20" alt="airplane">
 						</span>
                     </div>
@@ -137,7 +138,7 @@
 
                     </div>
                     <br>
-                    <a href="#" id="button-info">Подробнее</a>
+                    <a href="#second_anchor" id="button-info">Подробнее</a>
 
                 </div>
                 <div id="register">
@@ -174,7 +175,8 @@
                             <div>
                                 Город <span class="thmoon-pezd">*</span>
                             </div>
-                            <input class='thmoon-input thmoon-input-req' name='city' placeholder="Укажите Ваш город">
+                            <input class='thmoon-input thmoon-input-req thmoon-input-city' name='city' placeholder="Укажите Ваш город" list="thmoon-city-array" id="thmoon-input-city">
+                            <datalist id="thmoon-city-array"></datalist>
                             <div class="thmoon-spec-wrapper-222">
                                 <div class="thmoon-spec-wrapper">
                                     <div>
@@ -227,7 +229,7 @@
                 </div>
             </div>
         </div>
-        <div class="two___section">
+        <div class="two___section" id="second_anchor">
 
             <div id="scan">
                 <h1 style="text-align: center;">DoctorOnBoard</h1>
@@ -238,7 +240,7 @@
             </div>
         </div>
     </main>
-    <footer>
+    <footer id="footer_anchor">
         <div id="footer-container" class="container" style="display: flex">
             <div class="left-item">
                 <div id="a-footer">
@@ -268,7 +270,7 @@
 					</button>
                 </div>
                 <div class="modal-body">
-                    В скором времени мы начнём.
+                    Мы пришлем подтверждение на ваш Email.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
@@ -286,6 +288,8 @@
             z-index: 2;
             padding: 5% 0;
             background-color: white;
+            margin-top: 13%;
+            z-index: -1 !important;
         }
         
         #mobile_menu {
@@ -314,6 +318,7 @@
             margin: 0 5%;
             display: flex;
             justify-content: space-between;
+            display: none;
         }
         
         .mobile_help_links a {
@@ -360,7 +365,8 @@
         
         @media screen and (max-width: 1280px) {
             .mobile_snipet {
-                top: 17%;
+                margin-top: 8%;
+                z-index: 50;
             }
             #doctor {
                 display: block;
@@ -377,7 +383,7 @@
         
         @media screen and (max-width: 1100px) {
             .mobile_snipet {
-                top: 13.2%;
+                margin-top: 8.2%;
             }
         }
         
@@ -398,7 +404,7 @@
                 display: none;
             }
             .mobile_snipet {
-                top: 8.7%;
+                margin-top: 9%;
             }
         }
         
@@ -410,7 +416,7 @@
         
         @media screen and (max-width: 450px) {
             .mobile_snipet {
-                top: 6.7%;
+                margin-top: 11%;
             }
             #button-enter-mobile {
                 margin-left: 0;
@@ -512,8 +518,16 @@
                         alert('error!');
                     },
                 });
-                nextPrev(-1);
-                nextPrev(-1);
+                // nextPrev(-1);
+                // nextPrev(-1);
+                document.getElementsByClassName('thmoon-register-title')[0].innerText = 'Спасибо за регистрацию';
+
+                document.getElementsByClassName('thmoon-indicator-wrapper')[0].style.display = 'none';
+                document.getElementById('thmoon-form').style.display = 'none';
+                document.getElementById('thmoon-control-buttons').style.display = 'none';
+                document.getElementById('ofert').style.display = 'none';
+
+
                 return false;
             } else {
                 x[currentTab].style.display = "none";
@@ -541,6 +555,8 @@
             const email = x[currentTab].getElementsByClassName('thmoon-email-input')[0];
             let emailValidated = true;
             let telValidated = true;
+            const city = x[currentTab].getElementsByClassName('thmoon-input-city')[0];
+            let cityValidated = true;
             if (email) {
                 emailValidated = validateEmail(email.value);
                 if (!emailValidated) {
@@ -557,7 +573,15 @@
                     tel.className = "thmoon-input thmoon-input-req thmoon-tel-input";
                 }
             }
-            return valid && telValidated && emailValidated;
+            if (city) {
+                cityValidated = validateCity(city.value);
+                if (!cityValidated) {
+                    city.className += " thmoon-invalid";
+                } else {
+                    city.className = "thmoon-input thmoon-input-req thmoon-input-city";
+                }
+            }
+            return valid && telValidated && emailValidated && cityValidated;
         }
 
         function validateEmail(email) {
@@ -568,6 +592,27 @@
         function validateTel(tel) {
             var re = /^[+7\s]*[(]{0,1}[0-9]{1,4}[)][-\s\./0-9]*$/im;
             return re.test(String(tel).toLowerCase());
+        }
+
+        function validateCity(city) {
+            return !!cityArr.find(c => c === city);
+        }
+
+        //thmoon-city-array
+        const cityArr = cities.map(obj => obj.city);
+        cityArr.forEach(city => {
+            const node = document.createElement('option');
+            node.value = city;
+            document.getElementById('thmoon-city-array').appendChild(node)
+        });
+
+        document.getElementById('thmoon-input-city').onkeydown = (event) => {
+            if (!cityArr.find(city => city.toLowerCase().includes((event.target.value + event.key).toLowerCase())) &&
+                event.key !== 'Backspace' &&
+                event.key >= 'а' && event.key <= 'я'
+            ) {
+                event.preventDefault();
+            }
         }
     </script>
 </body>
