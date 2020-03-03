@@ -484,8 +484,6 @@
     </script>
     <script>
         var currentTab = 0;
-        let isError = false;
-        let result = {};
 
         const INDICATOR_TITLE_ARR = ['Чтобы найти отзывы о Вас', 'Чтобы не перепутать с тёской', 'Для оповещения о новых отзывах'];
         showTab(currentTab);
@@ -522,19 +520,11 @@
                 return false;
             }
             if (currentTab + n >= x.length) {
-                if (!isError) {
-                    const arr = [...document.getElementsByClassName('thmoon-input'), ...document.getElementsByClassName('thmoon-input-spec-awd')];
-
-                    arr.forEach(el => {
-                        result[el.name] = el.value;
-                        // console.log('adw', el.value);
-                    })
-                    result = JSON.parse(JSON.stringify(result));
-                }
-
-
-                result['email'] = document.getElementsByClassName('thmoon-email-input')[0].value;
-
+                let result = {};
+                const resultArr = [...document.getElementsByClassName('thmoon-input'), ...document.getElementsByClassName('thmoon-input-spec-awd')];
+                resultArr.forEach(el => {
+                    result[el.name] = el.value;
+                })
                 $.ajax({
                     url: 'https://api2.doctoronboard.ru:22222',
                     crossDomain: true,
@@ -554,9 +544,7 @@
                     },
                     error: function() {
                         $("#modal-error").modal('show');
-                        $('input').val('');
-                        $('select').val('');
-                        isError = true;
+                        return false;
                     },
                 }, );
                 // nextPrev(-1);
@@ -567,6 +555,7 @@
             } else {
                 x[currentTab].style.display = "none";
                 currentTab = currentTab + n;
+
             }
             showTab(currentTab);
             if (currentTab < 2) {
