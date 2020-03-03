@@ -64,10 +64,14 @@
                     }
                 </script>
                 <div id="input">
-                    <input id="input_mail" type="text" name="mail" placeholder="Адрес электронной почты">
-                    <input id="input_pass" placeholder="Пароль" type="password" name="password">
-                    <a href="" style="text-decoration: underline; padding-left: 10px; color: #00afc9;">Забыли
-						пароль?</a>
+                    <div id='input-wrapper'>
+                        <input id="input_mail" type="text" name="mail" placeholder="Адрес электронной почты">
+                        <div>
+                            <input id="input_pass" placeholder="Пароль" type="password" name="password">
+                            <a href="" style="text-decoration: underline; padding-left: 10px; color: #00afc9;">Забыли
+                            пароль?</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -277,6 +281,24 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="modal-error" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Данный Email уже зарегестрирован</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+                </div>
+                <div class="modal-body">
+                    Попробуйте зарегестрироваться под другой электронной почтой, или авторизуйтесь
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <style>
         .mobile_snipet {
@@ -462,6 +484,9 @@
     </script>
     <script>
         var currentTab = 0;
+        let isError = false;
+        let result = {};
+
         const INDICATOR_TITLE_ARR = ['Чтобы найти отзывы о Вас', 'Чтобы не перепутать с тёской', 'Для оповещения о новых отзывах'];
         showTab(currentTab);
         document.getElementById('ofert').hidden = true;
@@ -497,14 +522,21 @@
                 return false;
             }
             if (currentTab + n >= x.length) {
-                const arr = [...document.getElementsByClassName('thmoon-input'), ...document.getElementsByClassName('thmoon-input-spec-awd')];
-                const result = {};
+                if (!isError) {
+                    const arr = [...document.getElementsByClassName('thmoon-input'), ...document.getElementsByClassName('thmoon-input-spec-awd')];
 
-                arr.forEach(el => {
-                    result[el.name] = el.value;
-                })
+                    arr.forEach(el => {
+                        result[el.name] = el.value;
+                        // console.log('adw', el.value);
+                    })
+                    result = JSON.parse(JSON.stringify(result));
+                }
+
+
+                result['email'] = document.getElementsByClassName('thmoon-email-input')[0].value;
+
                 $.ajax({
-                    url: 'https://doctoronboard.ru/api.php/',
+                    url: 'https://api2.doctoronboard.ru:22222',
                     crossDomain: true,
                     dataType: 'script',
                     type: 'GET',
@@ -513,22 +545,25 @@
                         $("#modal").modal('show');
                         $('input').val('');
                         $('select').val('');
+                        document.getElementsByClassName('thmoon-register-title')[0].innerText = 'Спасибо за регистрацию';
+                        document.getElementsByClassName('thmoon-indicator-wrapper')[0].style.display = 'none';
+                        document.getElementById('thmoon-form').style.display = 'none';
+                        document.getElementById('thmoon-control-buttons').style.display = 'none';
+                        document.getElementById('ofert').style.display = 'none';
+                        return false;
                     },
                     error: function() {
-                        alert('error!');
+                        $("#modal-error").modal('show');
+                        $('input').val('');
+                        $('select').val('');
+                        isError = true;
                     },
-                });
+                }, );
                 // nextPrev(-1);
                 // nextPrev(-1);
-                document.getElementsByClassName('thmoon-register-title')[0].innerText = 'Спасибо за регистрацию';
-
-                document.getElementsByClassName('thmoon-indicator-wrapper')[0].style.display = 'none';
-                document.getElementById('thmoon-form').style.display = 'none';
-                document.getElementById('thmoon-control-buttons').style.display = 'none';
-                document.getElementById('ofert').style.display = 'none';
-
 
                 return false;
+
             } else {
                 x[currentTab].style.display = "none";
                 currentTab = currentTab + n;
