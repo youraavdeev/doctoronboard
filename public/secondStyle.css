@@ -215,7 +215,7 @@
     .first___section {
         /* background-image: url(/img/fone.png); */
         background-image: none;
-        margin-top: 15%;
+        margin-top: 10%;
     }
     .thmoon-background {
         background-image: url(/img/fone.png);
@@ -236,7 +236,7 @@
 }
 
 #menu-container {
-    position: fixed;
+    position: absolute;
     z-index: 1000;
     /* display: flex; */
     background: #fff;
@@ -255,4 +255,10 @@
 
 html {
     scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 375px) {
+    .first___section {
+        margin-top: 13%;
+    }
 }

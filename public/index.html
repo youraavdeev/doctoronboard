@@ -14,7 +14,6 @@
 
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
     <header id='menu-container'>
         <div class="container" id='menu-container-2'>
             <div class="menu">
@@ -175,8 +174,8 @@
                             <div>
                                 Город <span class="thmoon-pezd">*</span>
                             </div>
-                            <input class='thmoon-input thmoon-input-req thmoon-input-city' name='city' placeholder="Укажите Ваш город" list="thmoon-city-array" id="thmoon-input-city">
-                            <datalist id="thmoon-city-array"></datalist>
+                            <input class='thmoon-input thmoon-input-req thmoon-input-city' name='city' placeholder="Укажите Ваш город" list="thmoon-city-array" id="thmoon-input-city" type="text">
+                            <datalist id="thmoon-city-array"><select id="thmoon-city-array-select"></select></datalist>
                             <div class="thmoon-spec-wrapper-222">
                                 <div class="thmoon-spec-wrapper">
                                     <div>
@@ -204,10 +203,10 @@
                             </div>
                             <input type="email" class='thmoon-input thmoon-input-req thmoon-email-input' name='email' placeholder="Укажите Ваш Email">
 
-                            <div>
+                            <!-- <div>
                                 Телефон <span class="thmoon-pezd">*</span>
                             </div>
-                            <input id="thmoon-tel-input" class='thmoon-input thmoon-input-req thmoon-tel-input' name='phone' placeholder="Укажите Ваш телефон">
+                            <input id="thmoon-tel-input" class='thmoon-input thmoon-input-req thmoon-tel-input' name='phone' placeholder="Укажите Ваш телефон"> -->
                         </div>
                     </form>
                     <div id='thmoon-control-buttons' class='thmoon-control-buttons'>
@@ -404,7 +403,7 @@
                 display: none;
             }
             .mobile_snipet {
-                margin-top: 9%;
+                margin-top: 8%;
             }
         }
         
@@ -416,7 +415,7 @@
         
         @media screen and (max-width: 450px) {
             .mobile_snipet {
-                margin-top: 11%;
+                margin-top: 8%;
             }
             #button-enter-mobile {
                 margin-left: 0;
@@ -463,7 +462,7 @@
     </script>
     <script>
         var currentTab = 0;
-        const INDICATOR_TITLE_ARR = ['Чтобы Вас найти', 'Чтобы не перепутать с тёской', 'Для оповещения о новых отзывах'];
+        const INDICATOR_TITLE_ARR = ['Чтобы найти отзывы о Вас', 'Чтобы не перепутать с тёской', 'Для оповещения о новых отзывах'];
         showTab(currentTab);
         document.getElementById('ofert').hidden = true;
         $(":input").inputmask();
@@ -500,6 +499,7 @@
             if (currentTab + n >= x.length) {
                 const arr = [...document.getElementsByClassName('thmoon-input'), ...document.getElementsByClassName('thmoon-input-spec-awd')];
                 const result = {};
+
                 arr.forEach(el => {
                     result[el.name] = el.value;
                 })
@@ -603,7 +603,8 @@
         cityArr.forEach(city => {
             const node = document.createElement('option');
             node.value = city;
-            document.getElementById('thmoon-city-array').appendChild(node)
+            document.getElementById('thmoon-city-array').appendChild(node);
+            document.getElementById('thmoon-city-array-select').appendChild(node);
         });
 
         document.getElementById('thmoon-input-city').onkeydown = (event) => {
