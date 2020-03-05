@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="shortcut icon" href="/img/favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="stylev1.css">
     <link rel="stylesheet" href="secondStyle.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
@@ -179,7 +180,7 @@
                                 Город <span class="thmoon-pezd">*</span>
                             </div>
                             <input class='thmoon-input thmoon-input-req thmoon-input-city' name='city' placeholder="Укажите Ваш город" list="thmoon-city-array" id="thmoon-input-city" type="text">
-                            <datalist id="thmoon-city-array"><select id="thmoon-city-array-select"></select></datalist>
+                            <datalist id="thmoon-city-array"></datalist>
                             <div class="thmoon-spec-wrapper-222">
                                 <div class="thmoon-spec-wrapper">
                                     <div>
@@ -285,13 +286,13 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Данный Email уже зарегестрирован</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Данный Email уже зарегистрирован</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
                 </div>
                 <div class="modal-body">
-                    Попробуйте зарегестрироваться под другой электронной почтой, или авторизуйтесь
+                    Попробуйте зарегистрироваться под другой электронной почтой, или авторизуйтесь
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
@@ -628,7 +629,6 @@
             const node = document.createElement('option');
             node.value = city;
             document.getElementById('thmoon-city-array').appendChild(node);
-            document.getElementById('thmoon-city-array-select').appendChild(node);
         });
 
         document.getElementById('thmoon-input-city').onkeydown = (event) => {
