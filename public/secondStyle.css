@@ -74,8 +74,7 @@
     display: none;
 }
 
-.thmoon-valid,
-.thmoon-input {
+.thmoon-valid, .thmoon-input {
     width: 300px;
     height: 30px;
     border: none;
@@ -170,8 +169,9 @@
     margin-right: -18px;
     border-radius: 18px;
     background-color: #e5f7f9;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
     width: 336px;
+    font-size: 14px;
 }
 
 #second-text {
