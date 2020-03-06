@@ -1,0 +1,51 @@
+.title {
+    font-size: 18px;
+    color: #00afc9;
+    font-family: "Open Sans";
+    font-weight: 600;
+    margin-bottom: 26px;
+}
+
+.body {
+    font-size: 15px;
+    color: black;
+    font-family: "Open Sans";
+    margin-bottom: 36px;
+}
+
+.not_registered {
+    font-size: 14px;
+    color: #d2d2d2;
+    font-family: "Open Sans";
+    margin-bottom: 20px;
+}
+
+.proposion {
+    font-size: 14px;
+    color: #d2d2d2;
+    font-family: "Open Sans";
+    margin-bottom: 24px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.link {
+    color: #00afc9;
+    border-bottom: 1px solid #00afc9;
+}
+
+.line {
+    height: 1px;
+    background-color: #d2d2d2;
+    border: none;
+}
+
+.logo {
+    width: 200px;
+}
+
+.footer_text {
+    margin-bottom: 5px;
+}

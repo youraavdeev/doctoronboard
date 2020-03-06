@@ -1,0 +1,85 @@
+.title {
+    font-size: 18px;
+    color: #00afc9;
+    font-family: "Open Sans";
+    font-weight: 600;
+    margin-bottom: 26px;
+}
+
+.body {
+    margin-bottom: 30px;
+    background-color: #f9f9f9;
+    color: #969696;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.buttons {
+    margin-bottom: 30px;
+}
+
+.button {
+    width: 200px;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.appeal_button {
+    color: #ffffff;
+    background-color: #00afc9;
+    margin-right: 15px;
+}
+
+.not_about_me_button {
+    color: #d2d2d2;
+    background-color: #ffffff;
+}
+
+.why_sent {
+    font-size: 14px;
+    color: #d2d2d2;
+    font-family: "Open Sans";
+}
+
+.unfollow {
+    font-size: 14px;
+    color: #d2d2d2;
+    font-family: "Open Sans";
+    margin-bottom: 20px;
+}
+
+.unfollow_link {
+    color: #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.proposion {
+    font-size: 14px;
+    color: #d2d2d2;
+    font-family: "Open Sans";
+    margin-bottom: 24px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.link {
+    color: #00afc9;
+    border-bottom: 1px solid #00afc9;
+}
+
+.line {
+    height: 1px;
+    background-color: #d2d2d2;
+    border: none;
+}
+
+.logo {
+    width: 200px;
+}
+
+.footer_text {
+    margin-bottom: 5px;
+}
