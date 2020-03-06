@@ -195,10 +195,10 @@
                             <div class="thmoon-spec-wrapper-222">
                                 <div class="thmoon-spec-wrapper thmoon-dop-spec-wrapper">
                                     <div>
-                                        Дополнительная специальность
+                                        Город <span class="thmoon-pezd">*</span>
                                         <div class="thmoon-speciality-container">
                                             <select id="thmoon-input-city" hidden="true" name='city'
-                                                class="thmoon-input">
+                                                class="thmoon-input-city thmoon-input-req thmoon-input">
                                             </select>
                                         </div>
                                     </div>
@@ -213,7 +213,7 @@
                                             <!-- <img src="/img/Magnifying_glass_icon.svg" width="18px" height="18px"
                                                 class='thmoon-search-img' /> -->
                                             <select id="input_speciality" hidden="true" name='spec'
-                                                class="thmoon-input">
+                                                class="thmoon-input-spec thmoon-input-req thmoon-input">
                                             </select>
 
                                         </div>
@@ -226,7 +226,8 @@
                                     <div>
                                         Дополнительная специальность
                                         <div class="thmoon-speciality-container">
-                                            <select id="speciality-2" hidden="true" name='spec2' class="thmoon-input">
+                                            <select id="speciality-2" hidden="true" name='spec2'
+                                                class="thmoon-input-spec2 thmoon-input">
                                             </select>
                                         </div>
                                     </div>
@@ -636,7 +637,12 @@
             let emailValidated = true;
             let telValidated = true;
             const city = x[currentTab].getElementsByClassName('thmoon-input-city')[0];
+            const spec = x[currentTab].getElementsByClassName('thmoon-input-spec')[0];
+            const spec2 = x[currentTab].getElementsByClassName('thmoon-input-spec2')[0];
+
             let cityValidated = true;
+            let specValidated = true;
+            let specValidated2 = true;
             if (email) {
                 emailValidated = validateEmail(email.value);
                 if (!emailValidated) {
@@ -656,12 +662,31 @@
             if (city) {
                 cityValidated = validateCity(city.value);
                 if (!cityValidated) {
-                    city.className += " thmoon-invalid";
+                    // city.className += " thmoon-invalid";
+                    document.getElementsByClassName('thmoon-speciality-container')[0].className += " thmoon-invalid";
                 } else {
-                    city.className = "thmoon-input thmoon-input-req thmoon-input-city";
+                    document.getElementsByClassName('thmoon-speciality-container')[0].classList.remove("thmoon-invalid");
                 }
             }
-            return valid && telValidated && emailValidated && cityValidated;
+            if (spec) {
+                specValidated = validateCity(spec.value);
+
+                if (!specValidated) {
+                    document.getElementsByClassName('thmoon-speciality-container')[1].className += " thmoon-invalid";
+                } else {
+                    document.getElementsByClassName('thmoon-speciality-container')[1].classList.remove("thmoon-invalid");
+                }
+            }
+            // if (spec2) {
+            //     specValidated2 = validateCity(spec2.value);
+            //     if (!specValidated2) {
+            //         // city.className += " thmoon-invalid";
+            //         document.getElementsByClassName('thmoon-speciality-container')[2].className += " thmoon-invalid";
+            //     } else {
+            //         document.getElementsByClassName('thmoon-speciality-container')[2].classList.remove("thmoon-invalid");
+            //     }
+            // }
+            return valid && telValidated && emailValidated && cityValidated && specValidated && specValidated2;
         }
 
         function validateEmail(email) {
@@ -675,7 +700,7 @@
         }
 
         function validateCity(city) {
-            return !!cityArr.find(c => c === city);
+            return city !== 'Выберите из списка' && city != '';
         }
 
         //thmoon-city-array
