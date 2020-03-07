@@ -36,7 +36,7 @@ header {
 
 #logo {
     height: auto;
-    width: 110%;
+    width: 80%;
     margin-top: 4%;
 }
 
@@ -87,6 +87,7 @@ nav {
     display: flex;
     justify-content: space-between;
     background: white;
+    margin-top: 12px;
 }
 
 .topnav .icon {
@@ -96,7 +97,7 @@ nav {
 #input {
     /* margin-left: 10%; */
     margin-bottom: auto;
-    margin-top: auto;
+    margin-top: 20px;
     /* width: 20%; */
 }
 
@@ -171,6 +172,7 @@ nav {
     width: 100%;
     display: flex;
     margin-top: 9%;
+    max-height: 576px;
 }
 
 #service {
@@ -835,4 +837,14 @@ h3 {
 #input-wrapper {
     display: flex;
     flex-direction: column;
+}
+
+#myTopnav {
+    margin-top: 11px;
+}
+
+@media screen and (max-width: 500px) {
+    #myTopnav {
+        margin-top: 0;
+    }
 }
