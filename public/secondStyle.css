@@ -74,7 +74,8 @@
     display: none;
 }
 
-.thmoon-valid, .thmoon-input {
+.thmoon-valid,
+.thmoon-input {
     width: 300px;
     height: 30px;
     border: none;
@@ -265,7 +266,7 @@ html {
 
 .modal-title {
     color: #00AFC9;
-    font-size: 48px !important;
+    font-size: 40px !important;
     margin: auto !important;
     margin-top: 30px !important;
     font-weight: bold !important;
